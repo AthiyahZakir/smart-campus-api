@@ -16,7 +16,7 @@ public class DiscoveryResource {
     public Map<String, Object> getApiInfo() {
         Map<String, Object> response = new HashMap<>();
         response.put("version", "1.0");
-        response.put("contact", "admin@smartcampus.com");
+        response.put("contact", "admin@smartcampus.ac.uk");
 
         Map<String, String> links = new HashMap<>();
         links.put("rooms", "/api/v1/rooms");
