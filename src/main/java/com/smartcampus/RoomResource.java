@@ -39,4 +39,28 @@ public class RoomResource {
         }
         return Response.ok(room).build();
     }
+
+    // DELETE a room
+    @DELETE
+    @Path("/{roomId}")
+    public Response deleteRoom(@PathParam("roomId") String roomId) {
+        Room room = DataStore.rooms.get(roomId);
+
+        if (room == null) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("{\"message\":\"Room not found\"}")
+                    .build();
+        }
+
+        boolean hasSensors = DataStore.sensors.values()
+                .stream()
+                .anyMatch(s -> s.getRoomId().equals(roomId));
+
+        if (hasSensors) {
+            throw new RoomNotEmptyException(roomId);
+        }
+
+        DataStore.rooms.remove(roomId);
+        return Response.noContent().build();
+    }
 }
