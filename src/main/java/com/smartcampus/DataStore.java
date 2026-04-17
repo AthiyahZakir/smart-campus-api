@@ -22,7 +22,8 @@ public class DataStore {
         Sensor s1 = new Sensor();
         s1.setId(UUID.randomUUID().toString());
         s1.setType("Occupancy");
-        s1.setStatus("ACTIVE");
+        //s1.setStatus("ACTIVE");
+        s1.setStatus("MAINTENANCE");
         s1.setCurrentValue(0.0);
         s1.setRoomId("SCU_YOGA-03");
 
