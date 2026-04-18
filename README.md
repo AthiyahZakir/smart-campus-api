@@ -74,7 +74,7 @@ curl -X DELETE http://localhost:8080/api/v1/rooms/SCU_YOGA-03
 
 ---
 
-## Report Questions
+## Report Questions :
 
 ### Q1) JAX-RS Resource Lifecycle
 By default, JAX-RS creates a new instance of a resource class (e.g. RoomResource) for every incoming request. This means the resource class itself cannot hold any data it gets thrown away after each request. To solve this, we use a separate DataStore class with static fields, which exists independently of any request and persists for the lifetime of the application. Since multiple requests can arrive simultaneously and access the same DataStore, we use ConcurrentHashMap instead of a regular HashMap to prevent race conditions and data corruption.
