@@ -22,7 +22,7 @@ Built with JAX-RS (Jersey) and Grizzly embedded server.
 
 ### Steps
 ```bash
-git clone https://github.com/YOUR_USERNAME/smart-campus-api.git
+git clone https://github.com/AthiyahZakir/smart-campus-api.git
 cd smart-campus-api
 mvn clean package
 java -jar target/smart-campus-api-1.0-SNAPSHOT.jar
